@@ -1,0 +1,3 @@
+{{ with secret "keycloak-client-secrets/client-secret/jupyterhub" }}
+c.GenericOAuthenticator.client_secret = '{{ .Data.client_secret }}'
+{{ end 
