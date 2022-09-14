@@ -4,7 +4,7 @@
 ./vault.sh
 
 consul agent -dev
-nomad agent -dev -network-interface='{{ GetPrivateInterfaces | attr "name" }}' -config nomad/nomad.conf
+nomad agent -dev -network-interface="en0" -config nomad/nomad.conf
 
 vault server -dev -dev-root-token-id=root  -dev-plugin-dir=vault/plugins -dev-listen-address=0.0.0.0:8200 -config vault/vault.conf
 
